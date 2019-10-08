@@ -4,6 +4,7 @@
 #include "seclogin.h"
 #include "createcheck.h"
 #include "supportedsoftware.h"
+#include "secadminlogin.h"
 #include <QMessageBox>
 #include <QPixmap>
 
@@ -67,7 +68,7 @@ void MainWindow::buttonLogin()
 
     connOpen();
     QSqlQuery qry;
-    qry.prepare("select * from owner where userid='"+username +"' and password='"+password +"'");
+    qry.prepare("select * from owner where userid='"+username +"' and password='"+password +"' and rank='3'");
 
     if (qry.exec())
     {
@@ -84,9 +85,28 @@ void MainWindow::buttonLogin()
             secLogin = new SecLogin(this);
             secLogin->show();
         }
-        else
+        else if (count != 1)
         {
-            QMessageBox::warning(this,"Login", "Username and password is not correct!");
+            if(qry.exec("select * from owner where userid='"+username +"' and password='"+password +"' and rank='1'"))
+            {
+            int count = 0;
+            while (qry.next())
+            {
+                count++;
+            }
+            if(count ==1)
+            {
+                QMessageBox::information(this, "Login", "Username and password is correct");
+                hide();
+                connClose();
+                secAdminLogin *adminLogin = new secAdminLogin;
+                adminLogin -> show();
+            }
+                else
+                {
+                    QMessageBox::warning(this,"Login", "Username and password is not correct!");
+                }
+            }
         }
     }
 }
