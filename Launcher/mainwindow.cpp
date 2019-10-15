@@ -3,6 +3,7 @@
 #include "contactus.h"
 #include "seclogin.h"
 #include "createcheck.h"
+#include "secadminlogin.h"
 #include "supportedsoftware.h"
 #include "secadminlogin.h"
 #include <QMessageBox>
@@ -53,19 +54,6 @@ void MainWindow::buttonLogin()
         qDebug() << "Failed To Open the Database";
     }
 
-//    if (username == "test" && password == "test")
-//    {
-//        QMessageBox::information(this, "Login", "Username and password is correct");
-//        hide();
-//        secLogin = new SecLogin(this);
-//        secLogin->show();
-//    }
-//   else
-//    {
-//        QMessageBox::warning(this,"Login", "Username and password is not correct!");
-//    }
-//
-
     connOpen();
     QSqlQuery qry;
     qry.prepare("select * from owner where userid='"+username +"' and password='"+password +"' and rank='3'");
@@ -82,7 +70,7 @@ void MainWindow::buttonLogin()
             QMessageBox::information(this, "Login", "Username and password is correct");
             hide();
             connClose();
-            secLogin = new SecLogin(this);
+            secLogin = new SecLogin(username, this);
             secLogin->show();
         }
         else if (count != 1)

@@ -24,6 +24,7 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     ownercreate.cpp \
+    secadminlogin.cpp \
     seclogin.cpp \
     supportedsoftware.cpp \
     userdata.cpp
@@ -36,6 +37,7 @@ HEADERS += \
     employeecreate.h \
     mainwindow.h \
     ownercreate.h \
+    secadminlogin.h \
     seclogin.h \
     supportedsoftware.h \
     userdata.h
@@ -48,6 +50,7 @@ FORMS += \
     employeecreate.ui \
     mainwindow.ui \
     ownercreate.ui \
+    secadminlogin.ui \
     seclogin.ui \
     supportedsoftware.ui
 

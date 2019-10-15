@@ -262,6 +262,19 @@
     <string>Confirm</string>
    </property>
   </widget>
+  <widget class="QLabel" name="Status3">
+   <property name="geometry">
+    <rect>
+     <x>600</x>
+     <y>580</y>
+     <width>171</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>[+]Status</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>

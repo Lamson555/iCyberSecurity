@@ -17,7 +17,7 @@ class SecLogin : public QDialog
     Q_OBJECT
 
 public:
-    explicit SecLogin(QWidget *parent = nullptr);
+    explicit SecLogin(QString userName, QWidget *parent = nullptr);
     ~SecLogin();
 
  public slots:

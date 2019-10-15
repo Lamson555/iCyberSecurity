@@ -2,6 +2,7 @@
 #define SECADMINLOGIN_H
 
 #include <QDialog>
+#include "mainwindow.h"
 
 namespace Ui {
 class secAdminLogin;
@@ -11,6 +12,8 @@ class secAdminLogin : public QDialog
 {
     Q_OBJECT
 
+ public:
+    //MainWindow conn;
 public:
     explicit secAdminLogin(QWidget *parent = nullptr);
     ~secAdminLogin();

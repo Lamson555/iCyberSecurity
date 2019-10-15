@@ -11,6 +11,10 @@ OwnerCreate::OwnerCreate(QWidget *parent) :
     ui(new Ui::OwnerCreate)
 {
     ui->setupUi(this);
+    if (!conn.connOpen())
+        ui->Status3->setText("Failed to open the database");
+    else
+        ui->Status3->setText("Database Conneceted...");
 }
 
 OwnerCreate::~OwnerCreate()
@@ -27,13 +31,7 @@ void OwnerCreate::on_pushButton_clicked()
 
 void OwnerCreate::on_pushButton_2_clicked()
 {
-    QFile ownerFile("/Users/Hamad/CS1C_Project_One/owner.txt");
-
-    if(!ownerFile.open(QFile::WriteOnly | QFile::Text))
-    {
-        QMessageBox::warning(this,"Error","Database File is Not Open");
-    }
-    QTextStream out(&ownerFile);
+    char rank = '1';
     QString firstName = ui->firstText->toPlainText();
     QString lastName = ui->lastText->toPlainText();
     QString email = ui->emailText->toPlainText();
@@ -43,29 +41,25 @@ void OwnerCreate::on_pushButton_2_clicked()
     QString password = ui->passText->toPlainText();
     QString passwordCon = ui->passConText->toPlainText();
 
-    out << firstName + '\n';
-    out << lastName + '\n';
-    out << email + '\n';
-    out << phoneNumber + '\n';
-    out << businessName + '\n';
-    out << userID + '\n';
-    out << password + '\n';
-    out << passwordCon + '\n' + '\n';
+    if (!conn.connOpen())
+    {
+        qDebug() << "Failed To Open the Database";
+    }
+    conn.connOpen();
+    QSqlQuery qry;
+    qry.prepare("insert into owner (business,first, last, email, phone, userid, password, rank)"
+                "values ('"+businessName+"','"+firstName+"','"+lastName+"','"+email+"','"+phoneNumber+"','"+userID+"','"+password+"','"+rank+"')");
 
-    ownerFile.flush();
-    ownerFile.close();
-
-    this->ui->firstText->setText("");
-    this->ui->lastText->setText("");
-    this->ui->emailText->setText("");
-    this->ui->phoneText->setText("");
-    this->ui->businessText->setText("");
-    this->ui->userText->setText("");
-    this->ui->passText->setText("");
-    this->ui->passConText->setText("");
-
-    accountConfirm account;
-    account.setModal(true);
-    account.exec();
-    hide();
+    if (qry.exec())
+    {
+        conn.connClose();
+        accountConfirm account;
+        account.setModal(true);
+        account.exec();
+        hide();
+    }
+    else
+    {
+        QMessageBox::critical(this,tr("ERROR"),qry.lastError().text());
+    }
 }

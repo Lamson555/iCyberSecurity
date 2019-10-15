@@ -2,7 +2,7 @@
 #include "ui_seclogin.h"
 #include "mainwindow.h"
 
-SecLogin::SecLogin(QWidget *parent) :
+SecLogin::SecLogin(QString username, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::SecLogin)
 {

@@ -31,7 +31,7 @@ public:
     bool connOpen()
     {
         mydb=QSqlDatabase::addDatabase("QSQLITE");
-        mydb.setDatabaseName("/Users/Hamad/sqlite/customer.db");
+        mydb.setDatabaseName("/Users/LamsonBui/Desktop/CS1C_Project_One/customer.db");
 
         if (!mydb.open())
         {
@@ -48,6 +48,7 @@ public:
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+
 
 public slots:
     void buttonClickHandler();

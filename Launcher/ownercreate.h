@@ -2,6 +2,7 @@
 #define OWNERCREATE_H
 
 #include <QDialog>
+#include "mainwindow.h"
 
 namespace Ui {
 class OwnerCreate;
@@ -10,7 +11,8 @@ class OwnerCreate;
 class OwnerCreate : public QDialog
 {
     Q_OBJECT
-
+public:
+    MainWindow conn;
 public:
     explicit OwnerCreate(QWidget *parent = nullptr);
     ~OwnerCreate();
