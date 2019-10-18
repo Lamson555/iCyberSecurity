@@ -1,13 +1,15 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "contactus.h"
-#include "seclogin.h"
-#include "createcheck.h"
-#include "secadminlogin.h"
+#include "customerlogin.h"
+#include "userselect.h"
+#include "adminlogin.h"
 #include "supportedsoftware.h"
-#include "secadminlogin.h"
+#include "adminlogin.h"
+#include "viewdatabase.h"
 #include <QMessageBox>
 #include <QPixmap>
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -25,6 +27,10 @@ MainWindow::MainWindow(QWidget *parent)
         ui->Status->setText("Database Conneceted...");
 }
 
+void MainWindow::keyPressEvent(QKeyEvent* pe)
+{
+if(pe->key() == Qt::Key_Return) buttonLogin();                   //Enter Key works as input for buttonLogin()
+}
 
 MainWindow::~MainWindow()
 {
@@ -46,6 +52,7 @@ void MainWindow::buttonContact()
 
 void MainWindow::buttonLogin()
 {
+
     QString username = ui->lineUser->text();
     QString password = ui->linePassword->text();
 
@@ -56,7 +63,7 @@ void MainWindow::buttonLogin()
 
     connOpen();
     QSqlQuery qry;
-    qry.prepare("select * from owner where userid='"+username +"' and password='"+password +"' and rank='3'");
+    qry.prepare("select * from `customer` where userid='"+username +"' and password='"+password +"' and rank='3'");
 
     if (qry.exec())
     {
@@ -70,12 +77,12 @@ void MainWindow::buttonLogin()
             QMessageBox::information(this, "Login", "Username and password is correct");
             hide();
             connClose();
-            secLogin = new SecLogin(username, this);
-            secLogin->show();
+            customerLogin *userLogin = new customerLogin(username);
+            userLogin->show();
         }
         else if (count != 1)
         {
-            if(qry.exec("select * from owner where userid='"+username +"' and password='"+password +"' and rank='1'"))
+            if(qry.exec("select * from `admin` where userid='"+username +"' and password='"+password +"' and rank='1'"))
             {
             int count = 0;
             while (qry.next())
@@ -87,8 +94,8 @@ void MainWindow::buttonLogin()
                 QMessageBox::information(this, "Login", "Username and password is correct");
                 hide();
                 connClose();
-                secAdminLogin *adminLogin = new secAdminLogin;
-                adminLogin -> show();
+                adminLogin *userLogin = new adminLogin;
+                userLogin -> show();
             }
                 else
                 {
@@ -102,9 +109,9 @@ void MainWindow::buttonLogin()
 
 void MainWindow::on_buttonCreate_clicked()
 {
-    CreateCheck createCheck;
-    createCheck.setModal(true);
-    createCheck.exec();
+    userSelect UserSelect;
+    UserSelect.setModal(true);
+    UserSelect.exec();
     hide();
 }
 

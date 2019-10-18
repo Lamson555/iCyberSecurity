@@ -2,6 +2,9 @@
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -12,6 +15,9 @@
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
+  </property>
+  <property name="animated">
+   <bool>true</bool>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QPushButton" name="pushLogin">
@@ -25,6 +31,12 @@
     </property>
     <property name="text">
      <string>Login</string>
+    </property>
+    <property name="autoDefault">
+     <bool>true</bool>
+    </property>
+    <property name="default">
+     <bool>false</bool>
     </property>
    </widget>
    <widget class="QPushButton" name="pushClear">
@@ -160,7 +172,7 @@
    <widget class="QLabel" name="Status">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>10</x>
       <y>540</y>
       <width>171</width>
       <height>21</height>
@@ -174,7 +186,6 @@
    <zorder>pushLogin</zorder>
    <zorder>pushClear</zorder>
    <zorder>linePassword</zorder>
-   <zorder>lineUser</zorder>
    <zorder>label</zorder>
    <zorder>label_2</zorder>
    <zorder>pushContact</zorder>
@@ -182,6 +193,7 @@
    <zorder>Logo</zorder>
    <zorder>pushContact_2</zorder>
    <zorder>Status</zorder>
+   <zorder>lineUser</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

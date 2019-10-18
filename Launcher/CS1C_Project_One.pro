@@ -17,42 +17,39 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     accountconfirm.cpp \
+    admincreate.cpp \
+    adminlogin.cpp \
     contactus.cpp \
-    createcheck.cpp \
     customercreate.cpp \
-    employeecreate.cpp \
+    customerlogin.cpp \
     main.cpp \
     mainwindow.cpp \
-    ownercreate.cpp \
-    secadminlogin.cpp \
-    seclogin.cpp \
     supportedsoftware.cpp \
-    userdata.cpp
+    userdata.cpp \
+    userselect.cpp
 
 HEADERS += \
     accountconfirm.h \
+    admincreate.h \
+    adminlogin.h \
     contactus.h \
-    createcheck.h \
     customercreate.h \
-    employeecreate.h \
+    customerlogin.h \
     mainwindow.h \
-    ownercreate.h \
-    secadminlogin.h \
-    seclogin.h \
     supportedsoftware.h \
-    userdata.h
+    userdata.h \
+    userselect.h
 
 FORMS += \
     accountconfirm.ui \
+    admincreate.ui \
+    adminlogin.ui \
     contactus.ui \
-    createcheck.ui \
     customercreate.ui \
-    employeecreate.ui \
+    customerlogin.ui \
     mainwindow.ui \
-    ownercreate.ui \
-    secadminlogin.ui \
-    seclogin.ui \
-    supportedsoftware.ui
+    supportedsoftware.ui \
+    userselect.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

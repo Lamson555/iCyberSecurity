@@ -9,10 +9,13 @@ userData::userData()
     userId = "null";
     password = "null";
     rank = 0;
+    secureEmailGateway = 0;
+    dataEncryption = 0;
+    serverSecurity = 0;
 }
- userData::userData(string first, string last, string e, string phone, string user,
-                    string pass, int r)
- {
+ userData::userData(string b, string first, string last, string e, string phone, string user,
+                    string pass, int r, int se, int de, int ss)
+ {   businessName = b;
      fName = first;
      lName = last;
      email = e;
@@ -20,6 +23,9 @@ userData::userData()
      userId = user;
      password = pass;
      rank = r;
+     secureEmailGateway = se;
+     dataEncryption = de;
+     serverSecurity = ss;
  }
  void userData::setfName(string first)
  {
@@ -48,6 +54,18 @@ userData::userData()
  void userData::setRank(int r)
  {
      rank = r;
+ }
+ void userData::setsecureEmailGateway(int e)
+ {
+     secureEmailGateway = e;
+ }
+ void userData::setdataEncryption(int d)
+ {
+     dataEncryption = d;
+ }
+ void userData::setserverSecurity(int s)
+ {
+     serverSecurity = s;
  }
 
  void userData::getfName(string& first) const
@@ -78,6 +96,18 @@ userData::userData()
  {
      r = rank;
  }
+ void userData::getsecureEmailGateway(int &e) const
+ {
+     e = secureEmailGateway;
+ }
+ void userData::getdataEncryption(int &d) const
+ {
+     d = dataEncryption;
+ }
+ void userData::getserverSecutiy(int &s) const
+ {
+     s = serverSecurity;
+ }
  void userData::incUserCount()
  {
      userCount++;
@@ -87,7 +117,16 @@ userData::userData()
      userCount--;
  }
 
- ownerData::ownerData()
+ void userData::setBusinessName(string business)
+ {
+     businessName = business;
+ }
+ void userData::getBusinessName(string& business) const
+ {
+     business = businessName;
+ }
+
+ adminData::adminData()
  {
     userData::setfName("null");
     userData::setlName("null");
@@ -96,23 +135,18 @@ userData::userData()
     userData::setUserId("null");
     userData::setPassword("null");
     userData::setRank(1);
+    userData::setsecureEmailGateway(0);
+    userData::setdataEncryption(0);
+    userData::setserverSecurity(0);
  }
- ownerData::ownerData(string b, string first, string last, string e, string phone,
-           string user, string pass, int r)
-     :userData(first, last, e, phone, user, pass,r)
+ adminData::adminData(string b, string first, string last, string e, string phone,
+           string user, string pass, int r,  int se, int de, int ss)
+     :userData(b, first, last, e, phone, user, pass,r, se, de, ss)
 {
     int rank;
-    businessName = b;
     userData::getRank(rank);
     rank = 1;
     userData::setRank(rank);
 
 }
- void ownerData::setBusinessName(string business)
- {
-     businessName = business;
- }
- void ownerData::getBusinessName(string& business) const
- {
-     business = businessName;
- }
+

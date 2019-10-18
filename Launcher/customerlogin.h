@@ -1,21 +1,22 @@
-#ifndef SECLOGIN_H
-#define SECLOGIN_H
+#ifndef CUSTOMERLOGIN_H
+#define CUSTOMERLOGIN_H
 
 
 #include <QDialog>
 #include "mainwindow.h"
+#include "userdata.h"
 
 namespace Ui {
-class secLogin;
+class customerLogin;
 }
 
-class secLogin : public QDialog
+class customerLogin : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit secLogin(QWidget *parent = nullptr);
-    ~secLogin();
+    explicit customerLogin(QString username, QWidget *parent = nullptr);
+    ~customerLogin();
 
     double secureEmail = 4000.00;
     double dataEncrypt = 5000.00;
@@ -23,6 +24,7 @@ public:
     double total = 0.0;
 public:
     MainWindow conn;
+    class userData user;
 
 public slots:
    void buttonBackLogin();
@@ -37,7 +39,7 @@ private slots:
    void on_serverRadio_clicked();
 
 private:
-    Ui::secLogin *ui;
+    Ui::customerLogin *ui;
 };
 
-#endif // SECLOGIN_H
+#endif // CUSTOMERLOGIN_H

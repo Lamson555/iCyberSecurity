@@ -9,8 +9,8 @@
 #include <QSqlError>
 #include <QtDebug>
 #include <QFileInfo>
+#include <QKeyEvent>              //Needed for custom key press input
 #include "contactus.h"
-#include "seclogin.h"
 
 
 QT_BEGIN_NAMESPACE
@@ -62,7 +62,9 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    SecLogin *secLogin;
+
+protected:
+    void keyPressEvent(QKeyEvent* pe);         //Declaration for custom key input event
 
 
 };

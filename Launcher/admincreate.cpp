@@ -1,42 +1,41 @@
-#include "customercreate.h"
-#include "ui_customercreate.h"
+#include "admincreate.h"
+#include "ui_admincreate.h"
 #include "accountconfirm.h"
 #include "mainwindow.h"
 #include <QFile>
 #include <QTextStream>
 #include <QMessageBox>
 
-customerCreate::customerCreate(QWidget *parent) :
+adminCreate::adminCreate(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::customerCreate)
+    ui(new Ui::adminCreate)
 {
     ui->setupUi(this);
     if (!conn.connOpen())
-        ui->Status2->setText("Failed to open the database");
+        ui->Status3->setText("Failed to open the database");
     else
-        ui->Status2->setText("Database Conneceted...");
+        ui->Status3->setText("Database Conneceted...");
 }
 
-customerCreate::~customerCreate()
+adminCreate::~adminCreate()
 {
     delete ui;
 }
 
-void customerCreate::on_pushButton_clicked()
+void adminCreate::on_pushButton_clicked()
 {
     hide();
     MainWindow *mainWindow = new MainWindow();
     mainWindow->show();
 }
 
-void customerCreate::on_pushConfirm_clicked()
+void adminCreate::on_pushButton_2_clicked()
 {
-    char rank = '3';
+    char rank = '1';
     QString firstName = ui->firstText->text();
     QString lastName = ui->lastText->text();
     QString email = ui->emailText->text();
     QString phoneNumber = ui->phoneText->text();
-    QString businessName = ui->businessText->text();
     QString userID = ui->userText->text();
     QString password = ui->passText->text();
     QString passwordCon = ui->passConText->text();
@@ -47,8 +46,8 @@ void customerCreate::on_pushConfirm_clicked()
     }
     conn.connOpen();
     QSqlQuery qry;
-    qry.prepare("insert into customer (business, first, last, email, phone, userid, password, rank)"
-                "values ('"+businessName+"','"+firstName+"','"+lastName+"','"+email+"','"+phoneNumber+"','"+userID+"','"+password+"','"+rank+"')");
+    qry.prepare("insert into `admin` (first, last, email, phone, userid, password, rank)"
+                "values ('"+firstName+"','"+lastName+"','"+email+"','"+phoneNumber+"','"+userID+"','"+password+"','"+rank+"')");
 
     if (qry.exec())
     {

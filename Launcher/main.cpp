@@ -8,7 +8,7 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
-    vector<ownerData> ownerVector;
+    vector<adminData> adminVector;
     QApplication a(argc, argv);
     MainWindow w;
     w.show();
