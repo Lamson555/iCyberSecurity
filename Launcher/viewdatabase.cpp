@@ -20,7 +20,7 @@ void viewDatabase::on_loadDatabase_clicked()
     conn.connOpen();
     QSqlQuery* qry = new QSqlQuery(conn.mydb);
 
-    qry->prepare("Select first, last, email, phone from owner where rank = '3'");
+    qry->prepare("Select Last, first, email, phone, secureEmailGateway, dataEncryption, serverSecurity from customer where rank = '3' order by last ASC");
 
     qry->exec();
     modal->setQuery(*qry);

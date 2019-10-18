@@ -1,19 +1,19 @@
-#include "employeedata.h"
-#include "ui_employeedata.h"
+#include "admindata.h"
+#include "ui_admindata.h"
 
-employeeData::employeeData(QWidget *parent) :
+adminData::adminData(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::employeeData)
+    ui(new Ui::adminData)
 {
     ui->setupUi(this);
 }
 
-employeeData::~employeeData()
+adminData::~adminData()
 {
     delete ui;
 }
 
-void employeeData::on_loadDatabase_clicked()
+void adminData::on_loadDatabase_clicked()
 {
     QSqlQueryModel * modal = new QSqlQueryModel();
 

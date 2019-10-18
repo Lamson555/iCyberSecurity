@@ -18,6 +18,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     accountconfirm.cpp \
     admincreate.cpp \
+    admindata.cpp \
     adminlogin.cpp \
     contactus.cpp \
     customercreate.cpp \
@@ -26,11 +27,13 @@ SOURCES += \
     mainwindow.cpp \
     supportedsoftware.cpp \
     userdata.cpp \
-    userselect.cpp
+    userselect.cpp \
+    viewdatabase.cpp
 
 HEADERS += \
     accountconfirm.h \
     admincreate.h \
+    admindata.h \
     adminlogin.h \
     contactus.h \
     customercreate.h \
@@ -38,18 +41,21 @@ HEADERS += \
     mainwindow.h \
     supportedsoftware.h \
     userdata.h \
-    userselect.h
+    userselect.h \
+    viewdatabase.h
 
 FORMS += \
     accountconfirm.ui \
     admincreate.ui \
+    admindata.ui \
     adminlogin.ui \
     contactus.ui \
     customercreate.ui \
     customerlogin.ui \
     mainwindow.ui \
     supportedsoftware.ui \
-    userselect.ui
+    userselect.ui \
+    viewdatabase.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

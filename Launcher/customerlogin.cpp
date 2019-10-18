@@ -19,6 +19,8 @@ customerLogin::customerLogin(QString username, QWidget *parent) :
     else
         ui->Status4->setText("Database Conneceted...");
 
+    ui->lineEdit->setText(username);
+
 }
 
 
@@ -80,9 +82,10 @@ void customerLogin::on_serverRadio_clicked()
 
 void customerLogin::on_ConfirmPurchase_clicked()
 {
-    char secureEmailGateway;
-    char dataEncryption;
-    char serverSecurity;
+    QString userid = ui->lineEdit->text();          //So Jenky
+    QString secureEmailGateway;
+    QString dataEncryption;
+    QString serverSecurity;
 
     if(ui->secureRadio->isChecked())
     {
@@ -113,11 +116,12 @@ void customerLogin::on_ConfirmPurchase_clicked()
     conn.connOpen();
 
     QSqlQuery qry;
-//    qry.prepare("insert into `customer` (secureEmailGateway, dataEncryption, serverSecurity) values ('"+secureEmailGateway +"','"+dataEncryption +"','"+serverSecurity +"') where userid='"+username +"'");
 
-
-
-    qry.prepare("insert into `customer` (secureEmailGateway, dataEncryption, serverSecurity) values (:secureEmailGateway,:dataEncryption,:serverSecurity) where userid= (:username)");
+    qry.prepare("UPDATE customer SET secureEmailGateway=:secureEmailGateway, dataEncryption=:dataEncryption, serverSecurity=:serverSecurity WHERE userid='"+userid+"'");
+    qry.bindValue(":secureEmailGateway", secureEmailGateway);
+    qry.bindValue(":dataEncryption", dataEncryption);
+    qry.bindValue(":serverSecurity", serverSecurity);
+    qry.bindValue(":userid", userid);
 
     if (qry.exec())
     {

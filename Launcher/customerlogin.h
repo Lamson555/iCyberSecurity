@@ -24,7 +24,9 @@ public:
     double total = 0.0;
 public:
     MainWindow conn;
-    class userData user;
+
+signals:
+    void sendMessage(QString user);
 
 public slots:
    void buttonBackLogin();
