@@ -9,8 +9,10 @@
 #include <QSqlError>
 #include <QtDebug>
 #include <QFileInfo>
-#include <QKeyEvent>              //Needed for custom key press input
+#include <QKeyEvent>
 #include "contactus.h"
+
+
 
 
 QT_BEGIN_NAMESPACE
@@ -31,7 +33,7 @@ public:
     bool connOpen()
     {
         mydb=QSqlDatabase::addDatabase("QSQLITE");
-        mydb.setDatabaseName("/Users/LamsonBui/Desktop/CS1C_Project_One/customer.db");
+        mydb.setDatabaseName("/Users/Hamad/sqlite/customer.db");
 
         if (!mydb.open())
         {
@@ -49,7 +51,8 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-
+//signals:
+//   void sendMessage(QString username);
 public slots:
     void buttonClickHandler();
     void buttonContact();
@@ -60,11 +63,14 @@ private slots:
 
     void on_pushContact_2_clicked();
 
+
+
+    void on_comboBox_currentIndexChanged(const QString &arg1);
+protected:
+        void keyPressEvent(QKeyEvent* pe);
+
 private:
     Ui::MainWindow *ui;
-
-protected:
-    void keyPressEvent(QKeyEvent* pe);         //Declaration for custom key input event
 
 
 };

@@ -2,6 +2,8 @@
 #include "ui_customerlogin.h"
 #include "mainwindow.h"
 #include "userdata.h"
+#include "customerlogin.h"
+#include "customerfirst.h"
 #include <iomanip>
 #include <QFile>
 #include <QTextStream>
@@ -14,10 +16,6 @@ customerLogin::customerLogin(QString username, QWidget *parent) :
     ui(new Ui::customerLogin)
 {
     ui->setupUi(this);
-    if (!conn.connOpen())
-        ui->Status4->setText("Failed to open the database");
-    else
-        ui->Status4->setText("Database Conneceted...");
 
     ui->lineEdit->setText(username);
 
@@ -89,24 +87,24 @@ void customerLogin::on_ConfirmPurchase_clicked()
 
     if(ui->secureRadio->isChecked())
     {
-        secureEmailGateway = 'T';
+        secureEmailGateway = "Purchased";
     }
     else
-        secureEmailGateway = 'F';
+        secureEmailGateway = "DNP";
 
     if(ui->dataRadio->isChecked())
     {
-        dataEncryption = 'T';
+        dataEncryption = "Purchased";
     }
     else
-        dataEncryption = 'F';
+        dataEncryption = "DNP";
 
     if(ui->serverRadio->isChecked())
     {
-        serverSecurity = 'T';
+        serverSecurity = "Purchased";
     }
     else
-        serverSecurity = 'F';
+        serverSecurity = "DNP";
 
     if (!conn.connOpen())
     {
@@ -117,11 +115,8 @@ void customerLogin::on_ConfirmPurchase_clicked()
 
     QSqlQuery qry;
 
-    qry.prepare("UPDATE customer SET secureEmailGateway=:secureEmailGateway, dataEncryption=:dataEncryption, serverSecurity=:serverSecurity WHERE userid='"+userid+"'");
-    qry.bindValue(":secureEmailGateway", secureEmailGateway);
-    qry.bindValue(":dataEncryption", dataEncryption);
-    qry.bindValue(":serverSecurity", serverSecurity);
-    qry.bindValue(":userid", userid);
+    qry.prepare("UPDATE owner SET "
+                "secureEmailGateway='"+secureEmailGateway+"', dataEncryption= '"+dataEncryption+"', serverSecurity= '"+serverSecurity+"' WHERE userid='"+userid+"'");
 
     if (qry.exec())
     {
@@ -135,7 +130,6 @@ void customerLogin::on_ConfirmPurchase_clicked()
         tr("Purchase Confirmed.") );
 
     hide();
-    MainWindow *mainWindow = new MainWindow();
-    mainWindow->show();
-
+    customerFirst *userLogin = new customerFirst(userid);
+    userLogin->show();
 }

@@ -18,18 +18,27 @@ public:
     explicit customerLogin(QString username, QWidget *parent = nullptr);
     ~customerLogin();
 
+
+public:
     double secureEmail = 4000.00;
     double dataEncrypt = 5000.00;
     double serverSec = 10000.00;
     double total = 0.0;
+
 public:
     MainWindow conn;
-
-signals:
-    void sendMessage(QString user);
+    class userData user;
 
 public slots:
    void buttonBackLogin();
+public slots:
+   QString recieveMessage(QString username)
+   {
+       return username;
+   }
+
+signals:
+     void sendMessage(QString username);
 
 private slots:
    void on_ConfirmPurchase_clicked();

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>testimonial</class>
+ <widget class="QDialog" name="testimonial">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>558</width>
+    <height>589</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>120</y>
+     <width>501</width>
+     <height>431</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;CEO of Amazon, Jeff Bezos: Choosing this company for my cybersecurity&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;needs were extremely beneficial to my company and I. My company has&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;suffered multiple security breaches in the past. We wanted to prevent these&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;attacks from happening further, so we looked into iCybersecurity.&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;iCybersecurity has a super easy to read pamphlet that lets you know all of&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;their information and link to browse products. Their interface lets you browse&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;multiple plans that my company can choose from to support our needs.&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Overall, choosing this company has been a very good experience from the&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;product they give you, as well as the exceptional customer service.&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Co-founder of Google, Larry Page: My company and I were having trouble&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;finding a secure system to protect our company. I'm so glad I chose&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;iCybersecurity because they definitely catered to my company's needs. The&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;whole process was a breeze and the interface was very easy to use and&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;navigate.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>10</y>
+     <width>211</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="lineWidth">
+    <number>0</number>
+   </property>
+   <property name="midLineWidth">
+    <number>0</number>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:24pt;&quot;&gt;iCyberSecurity Inc.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;Testimonials&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="textFormat">
+    <enum>Qt::AutoText</enum>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

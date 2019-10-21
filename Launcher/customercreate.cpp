@@ -32,14 +32,13 @@ void customerCreate::on_pushButton_clicked()
 void customerCreate::on_pushConfirm_clicked()
 {
     char rank = '3';
-    QString firstName = ui->firstText->text();
-    QString lastName = ui->lastText->text();
-    QString email = ui->emailText->text();
-    QString phoneNumber = ui->phoneText->text();
-    QString businessName = ui->businessText->text();
-    QString userID = ui->userText->text();
-    QString password = ui->passText->text();
-    QString passwordCon = ui->passConText->text();
+    QString firstName = ui->lineFirst->text();
+    QString lastName = ui->lineLast->text();
+    QString email = ui->lineEmail->text();
+    QString phoneNumber = ui->linePhone->text();
+    QString userID = ui->lineUser->text();
+    QString password = ui->linePass->text();
+    QString passwordCon = ui->linePass2->text();
 
     if (!conn.connOpen())
     {
@@ -47,8 +46,8 @@ void customerCreate::on_pushConfirm_clicked()
     }
     conn.connOpen();
     QSqlQuery qry;
-    qry.prepare("insert into customer (business, first, last, email, phone, userid, password, rank)"
-                "values ('"+businessName+"','"+firstName+"','"+lastName+"','"+email+"','"+phoneNumber+"','"+userID+"','"+password+"','"+rank+"')");
+    qry.prepare("insert into owner (first, last, email, phone, userid, password, rank)"
+                "values ('"+firstName+"','"+lastName+"','"+email+"','"+phoneNumber+"','"+userID+"','"+password+"','"+rank+"')");
 
     if (qry.exec())
     {
@@ -62,4 +61,5 @@ void customerCreate::on_pushConfirm_clicked()
     {
         QMessageBox::critical(this,tr("ERROR"),qry.lastError().text());
     }
+
 }

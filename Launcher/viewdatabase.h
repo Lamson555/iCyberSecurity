@@ -21,6 +21,16 @@ public:
 private slots:
     void on_loadDatabase_clicked();
 
+    void on_loadDatabase_2_clicked();
+
+    void on_loadDatabase_3_clicked();
+
+    void on_loadDatabase_4_clicked();
+
+    void on_loadDatabase_5_clicked();
+
+    void on_loadDatabase_6_clicked();
+
 private:
     Ui::viewDatabase *ui;
 };

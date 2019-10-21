@@ -1,22 +1,22 @@
-#ifndef ADMINLOGIN_H
-#define ADMINLOGIN_H
+#ifndef SECADMINLOGIN_H
+#define SECADMINLOGIN_H
 
 #include <QDialog>
 #include "mainwindow.h"
 
 namespace Ui {
-class adminLogin;
+class secAdminLogin;
 }
 
-class adminLogin : public QDialog
+class secAdminLogin : public QDialog
 {
     Q_OBJECT
 
 public:
    MainWindow conn;
 public:
-    explicit adminLogin(QWidget *parent = nullptr);
-    ~adminLogin();
+    explicit secAdminLogin(QWidget *parent = nullptr);
+    ~secAdminLogin();
 
 private slots:
     void on_backLogin_clicked();
@@ -26,7 +26,7 @@ private slots:
     void on_pushButton_2_clicked();
 
 private:
-    Ui::adminLogin *ui;
+    Ui::secAdminLogin *ui;
 };
 
-#endif // ADMINLOGIN_H
+#endif // SECADMINLOGIN_H

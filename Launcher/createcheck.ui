@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>userSelect</class>
- <widget class="QDialog" name="userSelect">
+ <class>CreateCheck</class>
+ <widget class="QDialog" name="CreateCheck">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -25,10 +25,10 @@
    <property name="title">
     <string/>
    </property>
-   <widget class="QRadioButton" name="adminRadio">
+   <widget class="QRadioButton" name="ownerRadio">
     <property name="geometry">
      <rect>
-      <x>50</x>
+      <x>40</x>
       <y>30</y>
       <width>100</width>
       <height>20</height>
@@ -41,7 +41,7 @@
    <widget class="QRadioButton" name="customerRadio">
     <property name="geometry">
      <rect>
-      <x>230</x>
+      <x>240</x>
       <y>30</y>
       <width>100</width>
       <height>20</height>

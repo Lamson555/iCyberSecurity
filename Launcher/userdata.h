@@ -8,11 +8,9 @@ using namespace std;
 // Class userData is the base class for all the user's information.
 // It will contain all the common information needed for all types
 // of the users, interacting with the application.
-
 class userData
 {
 private:
-    string businessName;    //string variable to store the admin's business name
     string fName;       //string variable to store user's first name
     string lName;       //string variable to store user's last name
     string email;       //string variable to store user's email
@@ -27,19 +25,14 @@ private:
     int rank;
     // int rank will be used as a method to develop a heirarchy. Such that depending on the
     // interface you create your account you will be assigned a corresponding rank.
-    //              Example: rank = 1; Admin / Customer
+    //              Example: rank = 1; Admin / Owner
     //                       rank = 2; Employee
     //                       rank = 3; Customer
     //                       rank = 0; Null (will have no access to any operations)
-
-    int secureEmailGateway;
-    int dataEncryption;
-    int serverSecurity;
-
 public:
     userData();
     //default constructor of the class, will set all variables to null
-    userData(string b, string f, string l, string e, string p, string u, string pass, int r,  int se, int de, int ss);
+    userData(string f, string l, string e, string p, string u, string pass, int r);
     //constructor using special parameters, taking string fName, string lName, string email
     // string phoneNumber, string userId, string password, and an int rank.
     void setfName (string f);
@@ -57,10 +50,6 @@ public:
     void setRank (int r);
     // set the rank of the user
 
-    void setsecureEmailGateway(int e);
-    void setdataEncryption(int d);
-    void setserverSecurity(int s);
-
     void getfName (string& f) const;
     // get the first name of the user
     void getlName (string& l) const;
@@ -76,19 +65,10 @@ public:
     void getRank (int& r)const;
     // get the rank of the user
 
-    void getsecureEmailGateway(int& e) const;
-    void getdataEncryption(int& d) const;
-    void getserverSecutiy(int &s) const;
-
     void incUserCount();
     // function to increment the userCount variable
     void decUserCount();
     //function to decrement the userCount variable
-
-    void setBusinessName(string b);
-    //set the name of the business of the admin
-    void getBusinessName(string& b)const;
-    //get the name of the business of the admin.
 
     //~userData();
     //destructor for the class, will delete the object once it is out of scope.
@@ -97,20 +77,26 @@ public:
     // related to the class neatly.
 };
 
-class adminData: public userData
-/* Class adminData is derived from class userData, its purpose
+class ownerData: public userData
+/* Class ownerData is derived from class userData, its purpose
  * is to add additional information to user's whom create an
- * account as an admin of a business. Such as the name of their
+ * account as an owner of a business. Such as the name of their
  * business. */
 
 {
+private:
+    string businessName;    //string variable to store the owner's business name
 public:
-    adminData();
+    ownerData();
     //default constructor of the derived class
-    adminData(string b, string first, string last, string e, string phone,
-              string user, string pass, int r,  int se, int de, int ss);
+    ownerData(string b, string first, string last, string e, string phone,
+              string user, string pass, int r);
     //constructor using parameters from the base and derived class, it will
     //call the base constructor in the function defenition.
+    void setBusinessName(string b);
+    //set the name of the business of the owner
+    void getBusinessName(string& b)const;
+    //get the name of the business of the owner.
 };
 
 #endif // USERDATA_H

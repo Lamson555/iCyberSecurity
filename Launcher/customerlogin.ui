@@ -10,12 +10,6 @@
     <height>600</height>
    </rect>
   </property>
-  <property name="minimumSize">
-   <size>
-    <width>800</width>
-    <height>0</height>
-   </size>
-  </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
@@ -375,7 +369,7 @@ p, li { white-space: pre-wrap; }
    <property name="geometry">
     <rect>
      <x>480</x>
-     <y>500</y>
+     <y>520</y>
      <width>311</width>
      <height>61</height>
     </rect>
@@ -407,11 +401,11 @@ p, li { white-space: pre-wrap; }
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:36pt;&quot;&gt;$&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
-  <widget class="QLabel" name="Status4">
+  <widget class="QLabel" name="Status2">
    <property name="geometry">
     <rect>
-     <x>620</x>
-     <y>10</y>
+     <x>370</x>
+     <y>60</y>
      <width>171</width>
      <height>21</height>
     </rect>
@@ -423,10 +417,10 @@ p, li { white-space: pre-wrap; }
   <widget class="QLineEdit" name="lineEdit">
    <property name="geometry">
     <rect>
-     <x>200</x>
-     <y>560</y>
-     <width>125</width>
-     <height>0</height>
+     <x>20</x>
+     <y>530</y>
+     <width>141</width>
+     <height>20</height>
     </rect>
    </property>
    <property name="minimumSize">
@@ -436,6 +430,25 @@ p, li { white-space: pre-wrap; }
     </size>
    </property>
   </widget>
+  <zorder>lineEdit</zorder>
+  <zorder>label</zorder>
+  <zorder>backLogin</zorder>
+  <zorder>groupBox</zorder>
+  <zorder>groupBox_2</zorder>
+  <zorder>groupBox_3</zorder>
+  <zorder>groupBox_4</zorder>
+  <zorder>groupBox_5</zorder>
+  <zorder>groupBox_6</zorder>
+  <zorder>groupBox_7</zorder>
+  <zorder>groupBox_8</zorder>
+  <zorder>groupBox_9</zorder>
+  <zorder>groupBox_10</zorder>
+  <zorder>groupBox_11</zorder>
+  <zorder>groupBox_12</zorder>
+  <zorder>ConfirmPurchase</zorder>
+  <zorder>totalLCD</zorder>
+  <zorder>label_8</zorder>
+  <zorder>Status2</zorder>
  </widget>
  <resources/>
  <connections>

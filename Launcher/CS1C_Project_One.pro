@@ -17,44 +17,83 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     accountconfirm.cpp \
-    admincreate.cpp \
-    admindata.cpp \
-    adminlogin.cpp \
+    basicedit.cpp \
     contactus.cpp \
+    createcheck.cpp \
     customercreate.cpp \
+    customerfirst.cpp \
     customerlogin.cpp \
+    deletecustomer.cpp \
+    employeecreate.cpp \
+    employeedata.cpp \
+    employeedelete.cpp \
+    employeeedit.cpp \
+    guarantee.cpp \
+    help.cpp \
+    keyedit.cpp \
     main.cpp \
     mainwindow.cpp \
+    operations.cpp \
+    ownercreate.cpp \
+    salespitch.cpp \
+    secadminlogin.cpp \
+    services.cpp \
     supportedsoftware.cpp \
+    testimonial.cpp \
     userdata.cpp \
-    userselect.cpp \
     viewdatabase.cpp
 
 HEADERS += \
     accountconfirm.h \
-    admincreate.h \
-    admindata.h \
-    adminlogin.h \
+    basicedit.h \
     contactus.h \
+    createcheck.h \
     customercreate.h \
+    customerfirst.h \
     customerlogin.h \
+    deletecustomer.h \
+    employeecreate.h \
+    employeedata.h \
+    employeedelete.h \
+    employeeedit.h \
+    guarantee.h \
+    help.h \
+    keyedit.h \
     mainwindow.h \
+    operations.h \
+    ownercreate.h \
+    salespitch.h \
+    secadminlogin.h \
+    services.h \
     supportedsoftware.h \
+    testimonial.h \
     userdata.h \
-    userselect.h \
     viewdatabase.h
 
 FORMS += \
     accountconfirm.ui \
-    admincreate.ui \
-    admindata.ui \
-    adminlogin.ui \
+    basicedit.ui \
     contactus.ui \
+    createcheck.ui \
     customercreate.ui \
+    customerfirst.ui \
     customerlogin.ui \
+    deletecustomer.ui \
+    employeecreate.ui \
+    employeedata.ui \
+    employeedelete.ui \
+    employeeedit.ui \
+    guarantee.ui \
+    help.ui \
+    keyedit.ui \
     mainwindow.ui \
+    operations.ui \
+    ownercreate.ui \
+    salespitch.ui \
+    secadminlogin.ui \
+    services.ui \
     supportedsoftware.ui \
-    userselect.ui \
+    testimonial.ui \
     viewdatabase.ui
 
 # Default rules for deployment.

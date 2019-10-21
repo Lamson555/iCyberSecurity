@@ -29,9 +29,9 @@
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>61</x>
-     <y>171</y>
-     <width>69</width>
+     <x>60</x>
+     <y>170</y>
+     <width>91</width>
      <height>16</height>
     </rect>
    </property>
@@ -68,9 +68,9 @@
   <widget class="QLabel" name="label_5">
    <property name="geometry">
     <rect>
-     <x>61</x>
-     <y>251</y>
-     <width>95</width>
+     <x>60</x>
+     <y>250</y>
+     <width>111</width>
      <height>16</height>
     </rect>
    </property>
@@ -94,9 +94,9 @@
   <widget class="QLabel" name="label_11">
    <property name="geometry">
     <rect>
-     <x>61</x>
-     <y>491</y>
-     <width>114</width>
+     <x>60</x>
+     <y>490</y>
+     <width>131</width>
      <height>16</height>
     </rect>
    </property>
@@ -107,9 +107,9 @@
   <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>61</x>
-     <y>211</y>
-     <width>37</width>
+     <x>60</x>
+     <y>210</y>
+     <width>91</width>
      <height>16</height>
     </rect>
    </property>
@@ -133,9 +133,9 @@
   <widget class="QLabel" name="label_9">
    <property name="geometry">
     <rect>
-     <x>61</x>
-     <y>411</y>
-     <width>49</width>
+     <x>60</x>
+     <y>410</y>
+     <width>151</width>
      <height>16</height>
     </rect>
    </property>
@@ -146,9 +146,9 @@
   <widget class="QLabel" name="label_10">
    <property name="geometry">
     <rect>
-     <x>61</x>
-     <y>451</y>
-     <width>62</width>
+     <x>60</x>
+     <y>450</y>
+     <width>151</width>
      <height>16</height>
     </rect>
    </property>
@@ -161,7 +161,7 @@
     <rect>
      <x>60</x>
      <y>130</y>
-     <width>70</width>
+     <width>91</width>
      <height>16</height>
     </rect>
    </property>
@@ -182,107 +182,72 @@
     <string>[+]Status</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_12">
-   <property name="geometry">
-    <rect>
-     <x>61</x>
-     <y>291</y>
-     <width>97</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Business Name:</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="firstText">
+  <widget class="QLineEdit" name="lineFirst">
    <property name="geometry">
     <rect>
      <x>180</x>
      <y>130</y>
-     <width>171</width>
+     <width>261</width>
      <height>21</height>
     </rect>
    </property>
-   <property name="minimumSize">
-    <size>
-     <width>118</width>
-     <height>0</height>
-    </size>
-   </property>
-   <property name="baseSize">
-    <size>
-     <width>0</width>
-     <height>0</height>
-    </size>
-   </property>
   </widget>
-  <widget class="QLineEdit" name="lastText">
+  <widget class="QLineEdit" name="lineLast">
    <property name="geometry">
     <rect>
      <x>180</x>
      <y>170</y>
-     <width>171</width>
+     <width>261</width>
      <height>21</height>
     </rect>
    </property>
   </widget>
-  <widget class="QLineEdit" name="emailText">
+  <widget class="QLineEdit" name="lineEmail">
    <property name="geometry">
     <rect>
      <x>180</x>
      <y>210</y>
-     <width>171</width>
+     <width>261</width>
      <height>21</height>
     </rect>
    </property>
   </widget>
-  <widget class="QLineEdit" name="phoneText">
+  <widget class="QLineEdit" name="linePhone">
    <property name="geometry">
     <rect>
      <x>180</x>
      <y>250</y>
-     <width>171</width>
+     <width>261</width>
      <height>21</height>
     </rect>
    </property>
   </widget>
-  <widget class="QLineEdit" name="businessText">
+  <widget class="QLineEdit" name="lineUser">
    <property name="geometry">
     <rect>
-     <x>180</x>
-     <y>290</y>
-     <width>171</width>
-     <height>21</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="userText">
-   <property name="geometry">
-    <rect>
-     <x>180</x>
+     <x>190</x>
      <y>410</y>
-     <width>171</width>
+     <width>181</width>
      <height>21</height>
     </rect>
    </property>
   </widget>
-  <widget class="QLineEdit" name="passText">
+  <widget class="QLineEdit" name="linePass">
    <property name="geometry">
     <rect>
-     <x>180</x>
+     <x>190</x>
      <y>450</y>
-     <width>171</width>
+     <width>181</width>
      <height>21</height>
     </rect>
    </property>
   </widget>
-  <widget class="QLineEdit" name="passConText">
+  <widget class="QLineEdit" name="linePass2">
    <property name="geometry">
     <rect>
-     <x>180</x>
+     <x>190</x>
      <y>490</y>
-     <width>171</width>
+     <width>181</width>
      <height>21</height>
     </rect>
    </property>

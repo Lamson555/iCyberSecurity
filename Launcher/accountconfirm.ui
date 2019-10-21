@@ -49,7 +49,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Return to Login page</string>
+    <string>Return to Previous Page</string>
    </property>
   </widget>
  </widget>

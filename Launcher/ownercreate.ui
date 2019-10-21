@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>adminCreate</class>
- <widget class="QDialog" name="adminCreate">
+ <class>OwnerCreate</class>
+ <widget class="QDialog" name="OwnerCreate">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:24pt; font-weight:600; text-decoration: underline;&quot;&gt;Admin Account Creation:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:24pt; font-weight:600; text-decoration: underline;&quot;&gt;Business Owner Account Creation:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton">
@@ -37,6 +37,56 @@
    </property>
    <property name="text">
     <string>Return to Login page</string>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="firstText">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>140</y>
+     <width>261</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="lastText">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>180</y>
+     <width>261</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="emailText">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>220</y>
+     <width>261</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="businessText">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>300</y>
+     <width>261</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="phoneText">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>260</y>
+     <width>261</width>
+     <height>21</height>
+    </rect>
    </property>
   </widget>
   <widget class="QLabel" name="label_2">
@@ -89,6 +139,19 @@
    </property>
    <property name="text">
     <string>Phone Number:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>300</y>
+     <width>111</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Business Name:</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_7">
@@ -156,6 +219,36 @@
     <string>Confirm Password:</string>
    </property>
   </widget>
+  <widget class="QTextEdit" name="passConText">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>500</y>
+     <width>181</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="userText">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>420</y>
+     <width>181</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="passText">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>460</y>
+     <width>181</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
   <widget class="QPushButton" name="pushButton_2">
    <property name="geometry">
     <rect>
@@ -180,160 +273,6 @@
    </property>
    <property name="text">
     <string>[+]Status</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="firstText">
-   <property name="geometry">
-    <rect>
-     <x>150</x>
-     <y>140</y>
-     <width>261</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>118</width>
-     <height>0</height>
-    </size>
-   </property>
-   <property name="baseSize">
-    <size>
-     <width>0</width>
-     <height>0</height>
-    </size>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lastText">
-   <property name="geometry">
-    <rect>
-     <x>150</x>
-     <y>180</y>
-     <width>261</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>118</width>
-     <height>0</height>
-    </size>
-   </property>
-   <property name="baseSize">
-    <size>
-     <width>0</width>
-     <height>0</height>
-    </size>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="emailText">
-   <property name="geometry">
-    <rect>
-     <x>150</x>
-     <y>220</y>
-     <width>261</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>118</width>
-     <height>0</height>
-    </size>
-   </property>
-   <property name="baseSize">
-    <size>
-     <width>0</width>
-     <height>0</height>
-    </size>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="phoneText">
-   <property name="geometry">
-    <rect>
-     <x>150</x>
-     <y>260</y>
-     <width>261</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>118</width>
-     <height>0</height>
-    </size>
-   </property>
-   <property name="baseSize">
-    <size>
-     <width>0</width>
-     <height>0</height>
-    </size>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="userText">
-   <property name="geometry">
-    <rect>
-     <x>150</x>
-     <y>420</y>
-     <width>261</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>118</width>
-     <height>0</height>
-    </size>
-   </property>
-   <property name="baseSize">
-    <size>
-     <width>0</width>
-     <height>0</height>
-    </size>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="passText">
-   <property name="geometry">
-    <rect>
-     <x>150</x>
-     <y>460</y>
-     <width>261</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>118</width>
-     <height>0</height>
-    </size>
-   </property>
-   <property name="baseSize">
-    <size>
-     <width>0</width>
-     <height>0</height>
-    </size>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="passConText">
-   <property name="geometry">
-    <rect>
-     <x>150</x>
-     <y>500</y>
-     <width>261</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="minimumSize">
-    <size>
-     <width>118</width>
-     <height>0</height>
-    </size>
-   </property>
-   <property name="baseSize">
-    <size>
-     <width>0</width>
-     <height>0</height>
-    </size>
    </property>
   </widget>
  </widget>
